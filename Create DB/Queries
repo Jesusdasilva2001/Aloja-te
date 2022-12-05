@@ -1,0 +1,17 @@
+SELECT id, nome, email, telefone FROM public.senhorio WHERE email LIKE 'jesustamba@example.com';
+
+SELECT id, nome, descricao, id_casa FROM public.imovel;
+
+SELECT id, cozinha, banheiro, cidade, codigo_postal, bairro, rua, numero_casa, longitude, latitude, id_senhorio FROM public.casa;
+
+SELECT id, descricao, id_casa FROM public.quarto;
+
+SELECT id, url_da_imagem, id_casa, id_banheiro, id_imovel, id_quarto, id_cozinha FROM public.imagem;
+
+SELECT id, id_casa, utilizador FROM public.aluguerdecasa;
+
+SELECT id, id_stu, id_quarto, utilizador FROM public.aluguerdequarto;
+
+SELECT id, nome, email, telefone, passport, cartaodecidadao, datadenascimento, id_aluguerdecasa, id_aluguerdequarto FROM public.estudante;
+
+SELECT id, username, password, email, type FROM public.utilizador;
