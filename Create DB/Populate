@@ -1,0 +1,55 @@
+
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ('Jesus',     'jesussilva@example.com', '943896600',1 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Noble',      'Noblepego@example.com', '943896622'2 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Marcio',        'Marcio@example.com', '943896622'3 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Moises',        'Moises@example.com', '943896622'4 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Daniel',        'Daniel@example.com', '943896622'5 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Bruno',          'Bruno@example.com', '943896622'6 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Oscar',          'Oscar@example.com', '943896622'7 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Cristovão',  'Cristovão@example.com', '943896622'8 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Raquel',        'Raquel@example.com', '943896622'9 );
+INSERT INTO utilizador(utilizador_nome, utilizador_email, utilizador_telefone) VALUES ( 'Dias',           'Dias@example.com', '943896622'10 );
+
+
+
+INSERT INTO senhorio(senhorio_nome , senhorio_email, senhorio_telefone, senhorio_utilizador_id) VALUES ('Marcio',     "Marcio@example.com", '923994433',1 );
+INSERT INTO senhorio(senhorio_nome , senhorio_email, senhorio_telefone, senhorio_utilizador_id) VALUES ('Moises',     "Moises@example.com", '923994433',2 );
+INSERT INTO senhorio(senhorio_nome , senhorio_email, senhorio_telefone, senhorio_utilizador_id) VALUES ('Jeremias', "Jeremias@example.com", '923994433',3 );
+INSERT INTO senhorio(senhorio_nome , senhorio_email, senhorio_telefone, senhorio_utilizador_id) VALUES ('Simão',      "Marcio@example.com", '923994433',4 );
+
+
+
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('jesus'), to_email('jesusSilva@example'),    to_telefone('943896600'), to_passport('U2795106'), to_cc('8721DU63')to_date('1995.01.01','YYYY.MM.DD'),1 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Noble'), to_email('Noble@example'),         to_telefone('943896601'), to_passport('D2795106'), to_cc('8721DV63')to_date('1996.10.02','YYYY.MM.DD'),2 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Marcio'), to_email('Marcio@example'),       to_telefone('943896602'), to_passport('P2795106'), to_cc('8721DO63')to_date('1997.02.05','YYYY.MM.DD'),3 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Moises'), to_email('Moises@example'),       to_telefone('943896603'), to_passport('H2795106'), to_cc('8721DL63')to_date('1998.06.15','YYYY.MM.DD'),4 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Daniel'), to_email('Daniel@example'),       to_telefone('943896604'), to_passport('E2795106'), to_cc('8721DM63')to_date('1999.01.22','YYYY.MM.DD'),5 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Bruno'), to_email('Bruno@example'),         to_telefone('943896605'), to_passport('A2795106'), to_cc('8721DN63')to_date('1942.12.01','YYYY.MM.DD'),6 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Oscar'), to_email('Oscar@example'),         to_telefone('943896606'), to_passport('N2795106'), to_cc('8721DC63')to_date('1993.11.01','YYYY.MM.DD'),7 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Cristovão'), to_email('Cristovão@example'), to_telefone('943896607'), to_passport('Z2795106'), to_cc('8721DA63')to_date('1985.01.01','YYYY.MM.DD'),8 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Raquel'), to_email('Raquel@example'),       to_telefone('943896608'), to_passport('M2795106'), to_cc('8721DE63')to_date('1975.01.01','YYYY.MM.DD'),9 );
+INSERT INTO estudante(estudante_nome, estudante_email, estudante_telefone, estudante_passport, estudante_cc, estudante_bdate,) VALUES (to_nome ('Dias'), to_email('Dias@example'),           to_telefone('943896609'), to_passport('N2795106'), to_cc('8721DR63')to_date('1965.08.21','YYYY.MM.DD'),10 );
+
+
+INSERT INTO casa(casa_cozinha, casa_banheiro, casa_cidade, casa_codigo_postal, casa_bairro, casa_rua, casa_numero_casa, casa_longitude, casa_latitude, casa_senhorio_id)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+INSERT INTO quarto(quarto_descricao, quarto_casa_id) VALUES (?, ?, ?);
+INSERT INTO quarto(quarto_descricao, quarto_casa_id) VALUES (?, ?, ?);
+INSERT INTO quarto(quarto_descricao, quarto_casa_id) VALUES (?, ?, ?);
+
+INSERT INTO aluguerdecasa(aluguerdecasa_casa_id, aluguerdecasa_stu, aluguerdecasa_utilizador)VALUES (?, ?, ?);
+INSERT INTO aluguerdecasa(aluguerdecasa_casa_id, aluguerdecasa_stu, aluguerdecasa_utilizador)VALUES (?, ?, ?);
+INSERT INTO aluguerdecasa(aluguerdecasa_casa_id, aluguerdecasa_stu, aluguerdecasa_utilizador)VALUES (?, ?, ?);
+
+INSERT INTO aluguerdequarto( aluguerdequarto_id_stu, aluguerdequarto_quarto_id, aluguerdequarto_utilizador)VALUES (?, ?, ?, ?);
+INSERT INTO aluguerdequarto( aluguerdequarto_id_stu, aluguerdequarto_quarto_id, aluguerdequarto_utilizador)VALUES (?, ?, ?, ?);
+INSERT INTO aluguerdequarto( aluguerdequarto_id_stu, aluguerdequarto_quarto_id, aluguerdequarto_utilizador)VALUES (?, ?, ?, ?);
+INSERT INTO aluguerdequarto( aluguerdequarto_id_stu, aluguerdequarto_quarto_id, aluguerdequarto_utilizador)VALUES (?, ?, ?, ?);
+
+
+INSERT INTO imovel(imovel_nome, imovel_descricao, imovel_casa_id)VALUES (?, ?, ?, ?);
+INSERT INTO imovel(imovel_nome, imovel_descricao, imovel_casa_id)VALUES (?, ?, ?, ?);
+INSERT INTO imovel(imovel_nome, imovel_descricao, imovel_casa_id)VALUES (?, ?, ?, ?);
+INSERT INTO imovel(imovel_nome, imovel_descricao, imovel_casa_id)VALUES (?, ?, ?, ?);
+
+INSERT INTO imagem(imagem_url_da_imagem, imagem_casa_id, imagem_banheiro_id, imagem_imovel_id, imagem_quarto_id, imagem_cozinha_id)VALUES (?, ?, ?, ?, ?, ?, ?);
