@@ -1,0 +1,111 @@
+create table imovel(
+	              imovel_id serial primary key,
+	              imovel_nome varchar(60) not null,           --imovel nome
+	              imovel_descricao text,                        --imovel descriç
+);
+
+create table senhorio(
+	               senhorio_id serial primary key,
+	               senhorio_nome varchar(60) not null,                --senhorio nome
+	               senhorio_email varchar(60) not null,               --senhorio email
+	               senhorio_telefone varchar(40) not null,             --senhorio telefone
+	               senhorio_utilizador_id int not null,                -- FK para utilizador
+                   primary key(senhorio_id)
+);
+
+create table casa(
+	              casa_id serial primary key,
+	              casa_cozinha varchar(100),
+	              casa_banheiro text,
+	              casa_cidade varchar(30) not null,
+	              casa_codigo_postal varchar(20) not null,
+	              casa_bairro varchar(60) not null,
+	              casa_rua varchar(60) not null,
+	              casa_numero int not null,
+	              casa_longitude decimal not null,
+	              casa_latitude decimal not null,
+	              casa_senhorio_id int not null,                        -- FK para senhorio
+);
+
+Create table quarto(
+	              quarto_id serial primary key,
+	              quarto_descricao text,                 --quarto descricao
+	              quarto_id_casa int, 
+	              foreign key(id_casa) references casa(id)
+);
+
+Create table imagem(
+	               img_id serial primary key,
+	               img_url_da_imagem VARCHAR(60),
+	               img_id_casa int,
+	               img_id_banheiro int,
+	               img_id_imovel int,
+	               img_id_quarto int, 
+	               img_id_cozinha int,
+	               foreign key(id_casa) references casa(id)
+);
+
+create table aluguerdecasa(
+	               aluguerdecasa_id serial primary key,
+	               aluguerdecasa_id_casa int,
+	               aluguerdecasa_utilizador int,
+	               foreign key (id_casa) references casa(id)
+);
+  
+create table aluguerdequarto(
+	               aluguerdequarto_id serial primary key,
+	               aluguerdequarto_id_estudante INT,
+	               aluguerdequarto_id_quarto int,
+	               aluguerdequarto_utilizador VARCHAR(60),
+	               foreign key (id_quarto) references quarto(id)  
+);
+ 
+create table Estudante(
+	               estudante_id serial primary key,
+	               estudante_name VARCHAR(60) not null, 
+	               estudante_email varchar(60)  not null,
+	               estudante_telefone numeric(9, 0) not null,
+	               estudante_passport int,
+	               cartaodecidadao VARCHAR(60),
+	               datadenascimento varchar(60),
+                   primary key(estudante_id)
+);
+
+create table Utilizador(
+	              utilizador_id serial primary key,
+	              utilizador_username varchar(60),         --utilizador name 
+	              utilizador_password VARCHAR(60),         --utilizador password
+	              utilizador_email VARCHAR(60),            --utilizador email
+	              utilizador_type integer
+                  primary key(utilizador_id)
+);
+
+
+-- foreign keys
+
+            
+alter table casa
+add constraint (casa_id_senhorio_fkey)
+foreign key  (id_senhorio) references senhorio(id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;            
+            
+alter table quarto
+add constraint quarto_id_casa_fkey
+foreign key (quarto_id_casa) references casa (id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;            
+
+alter table imagem
+add constraint imagem_id_casa_fkey
+foreign key (id_casa) references casa (id)
+ON DELETE NO ACTION ON UPDATE NO ACTION; 
+                        
+alter table aluguerdecasa
+add constraint aluguerdecasa_id_casa_fkey
+foreign key (id_casa) references casa (id)
+ON DELETE NO ACTION ON UPDATE NO ACTION; 
+
+alter table aluguerdequarto
+add constraint aluguerdequarto_id_quarto_fkey
+foreign key (id_quarto) references quarto (id)
+ON DELETE NO ACTION ON UPDATE NO ACTION; 
+
